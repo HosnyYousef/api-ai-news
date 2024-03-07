@@ -1,4 +1,4 @@
-const POST = 8000
+const PORT = 8000
 
 const express = require('express')
 const axios = require('axios')
