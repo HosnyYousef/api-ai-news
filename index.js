@@ -1,4 +1,4 @@
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 
 const express = require('express')
 const axios = require('axios')
@@ -9,7 +9,7 @@ const app = express()
 // we save it as app (variable) so we can use it further on, use as we please
 // we use crud with it app.
 
-const newspapers =  [
+const newspapers = [
     {
         name: 'techcrunch',
         address: 'https://search.techcrunch.com/search;_ylt=AwrFNIURU.9lZ.kBfhWnBWVH;_ylc=X1MDMTE5NzgwMjkxOQRfcgMyBGZyA3RlY2hjcnVuY2gtcwRncHJpZAN3M3JWWnVLOVJuMnJXM0RmbWtJUW9BBG5fcnNsdAMwBG5fc3VnZwM5BG9yaWdpbgNzZWFyY2gudGVjaGNydW5jaC5jb20EcG9zAzAEcHFzdHIDBHBxc3RybAMwBHFzdHJsAzEwBHF1ZXJ5A2ZpbG1tYWtpbmcEdF9zdG1wAzE3MTAxODMxOTM-?p=filmmaking&fr2=sb-top&fr=techcrunch-s',
@@ -94,7 +94,7 @@ newspapers.forEach(newspaper => {
 })
 
 
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
     res.json('Welcome to my AI Filmmaking news API')
 })
 
